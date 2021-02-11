@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Business.Concrete
 {
-    class BrandManager : IBrandService
+    public class BrandManager : IBrandService
     {
         IBrandDal _brandDal;
         public BrandManager(IBrandDal brandDal)
@@ -29,7 +29,8 @@ namespace Business.Concrete
 
         public void Delete(Brand brand)
         {
-            throw new NotImplementedException();
+            _brandDal.Delete(brand);
+            Console.WriteLine("Marka bilgisi başarılı bir şekilde silindi.");
         }
 
         public List<Brand> GetAll()
@@ -39,12 +40,13 @@ namespace Business.Concrete
 
         public Brand GetById(int id)
         {
-            throw new NotImplementedException();
+            return _brandDal.Get(x => x.BrandId == id);
         }
 
         public void Update(Brand brand)
         {
-            throw new NotImplementedException();
+            _brandDal.Update(brand);
+            Console.WriteLine("Marka başarılı bir şekilde güncellendi.");
         }
     }
 }
