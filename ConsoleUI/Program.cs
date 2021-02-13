@@ -10,9 +10,9 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            CarTest();
-            ColorTest();
-            BrandTest();
+            //CarTest();
+            //ColorTest();
+            //BrandTest();
 
             //Car car1 = new Car()
             //{
@@ -25,6 +25,29 @@ namespace ConsoleUI
             //};
             //carManager.Add(car1);
             //Console.WriteLine("Araç kaydı eklendi.");
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            Customer customer1 = new Customer()
+            {
+                Id = 4,
+                UserId = 2,
+                CompanyName = "ABC"
+            };
+            customerManager.Add(customer1);
+            Console.WriteLine("Kullanıcı eklendi.");
+
+            //CustomerTest();
+
+
+        }
+
+        private static void CustomerTest()
+        {
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            var result = customerManager.GetAll();
+            foreach (var customer in result.Data)
+            {
+                Console.WriteLine(customer.Id + " " + customer.UserId + " " + customer.CompanyName);
+            }
         }
 
         private static void ColorTest()
@@ -33,7 +56,7 @@ namespace ConsoleUI
             var result = colorManager.GetAll();
             foreach (var color in result.Data)
             {
-                Console.WriteLine("{0}  {1}", color.ColorId, color.ColorName);
+                Console.WriteLine("{0}  {1}", color.Id, color.Name);
             }
         }
 
@@ -53,7 +76,7 @@ namespace ConsoleUI
             var result = brandManager.GetAll();
             foreach (var brand in result.Data)
             {
-                Console.WriteLine(brand.BrandName);
+                Console.WriteLine(brand.Name);
             }
         }
     }
