@@ -41,6 +41,11 @@ namespace Business.Concrete
             return new SuccessDataResult<List<User>>(_userDal.GetAll(), Messages.UserListed);
         }
 
+        public IDataResult<User> GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IResult Update(User user)
         {
             _userDal.Update(user);
