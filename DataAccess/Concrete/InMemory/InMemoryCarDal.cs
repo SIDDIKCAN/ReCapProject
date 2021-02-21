@@ -16,11 +16,11 @@ namespace DataAccess.Concrete.InMemory
         {
             _cars = new List<Car>
             {
-                new Car{Id=1,BrandId=1,ColorId=1,DailyPrice=500,ModelYear="2020",Description="Günlük kiralanabilen bir araçtır."},
-                new Car{Id=1,BrandId=2,ColorId=1,DailyPrice=500,ModelYear="2021",Description="Günlük kiralanabilen bir araçtır."},
-                new Car{Id=2,BrandId=2,ColorId=3,DailyPrice=700,ModelYear="2019",Description="Günlük kiralanabilen bir araçtır."},
-                new Car{Id=2,BrandId=3,ColorId=3,DailyPrice=700,ModelYear="2018",Description="Günlük kiralanabilen bir araçtır."},
-                new Car{Id=3,BrandId=3,ColorId=2,DailyPrice=600,ModelYear="2018",Description="Günlük kiralanabilen bir araçtır."},
+                new Car{Id=1,BrandId=1,ColorId=1,DailyPrice=500,ModelYear=2020,Description="Günlük kiralanabilen bir araçtır."},
+                new Car{Id=1,BrandId=2,ColorId=1,DailyPrice=500,ModelYear=2021,Description="Günlük kiralanabilen bir araçtır."},
+                new Car{Id=2,BrandId=2,ColorId=3,DailyPrice=700,ModelYear=2019,Description="Günlük kiralanabilen bir araçtır."},
+                new Car{Id=2,BrandId=3,ColorId=3,DailyPrice=700,ModelYear=2018,Description="Günlük kiralanabilen bir araçtır."},
+                new Car{Id=3,BrandId=3,ColorId=2,DailyPrice=600,ModelYear=2018,Description="Günlük kiralanabilen bir araçtır."},
             };
         }
         public void Add(Car car)

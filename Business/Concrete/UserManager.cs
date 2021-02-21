@@ -6,6 +6,8 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 
 namespace Business.Concrete
 {
@@ -17,6 +19,7 @@ namespace Business.Concrete
             _userDal = userDal;
         }
 
+        [ValidationAspect(typeof(UserValidation))]
         public IResult Add(User user)
         {
             if ((user.FirstName+ " " + user.LastName).Length>3)
@@ -46,6 +49,7 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
+        [ValidationAspect(typeof(UserValidation))]
         public IResult Update(User user)
         {
             _userDal.Update(user);
