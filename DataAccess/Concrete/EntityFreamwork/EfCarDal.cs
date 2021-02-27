@@ -11,18 +11,18 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFreamwork
 {
-    public class EfCarDal : EfEntityRepositoryBase<Car,ReCapContext>,ICarDal
+    public class EfCarDal : EfEntityRepositoryBase<Car, ReCapContext>, ICarDal
     {
         public List<CarDetailDto> GetCarDetails()
         {
-            using (ReCapContext context=new ReCapContext())
+            using (ReCapContext context = new ReCapContext())
             {
                 var result = from c in context.Cars
                              join b in context.Brands
                              on c.BrandId equals b.Id
                              join r in context.Colors
                              on c.ColorId equals r.Id
-                             select new CarDetailDto { CarId = c.Id, ModelYear = c.ModelYear, DailyPrice = c.DailyPrice, Description = c.Description, BrandName = b.Name, ColorName = r.Name };
+                             select new CarDetailDto { CarId = c.Id, ModelYear = c.ModelYear, DailyPrice = c.DailyPrice, Description = c.Description, BrandName = b.Name, ColorName = r.Name};
                 return result.ToList();
             }
         }

@@ -25,17 +25,17 @@ namespace ConsoleUI
             //};
             //carManager.Add(car1);
             //Console.WriteLine("Araç kaydı eklendi.");
-            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
-            Customer customer1 = new Customer()
-            {
-                Id = 4,
-                UserId = 2,
-                CompanyName = "ABC"
-            };
-            customerManager.Add(customer1);
-            Console.WriteLine("Kullanıcı eklendi.");
+            //CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            //Customer customer1 = new Customer()
+            //{
+            //    Id = 4,
+            //    UserId = 2,
+            //    CompanyName = "ABC"
+            //};
+            //customerManager.Add(customer1);
+            //Console.WriteLine("Kullanıcı eklendi.");
 
-            //CustomerTest();
+            CarTest();
 
 
         }

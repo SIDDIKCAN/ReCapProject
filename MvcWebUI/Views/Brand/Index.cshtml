@@ -1,0 +1,14 @@
+﻿@model List<Entities.Concrete.Brand>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index sayfası</h1>
+
+<h5>deneme deneme </h5>
+
+@foreach (var brands in Model)
+{
+    <li>@brands.Name</li>
+}
