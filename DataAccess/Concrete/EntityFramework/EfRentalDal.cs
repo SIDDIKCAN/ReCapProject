@@ -8,7 +8,7 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
 
-namespace DataAccess.Concrete.EntityFreamwork
+namespace DataAccess.Concrete.EntityFramework
 {
     public class EfRentalDal : EfEntityRepositoryBase<Rental, ReCapContext>, IRentalDal
     {

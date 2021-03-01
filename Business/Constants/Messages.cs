@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Constants
@@ -48,5 +49,13 @@ namespace Business.Constants
 
         public static string CarImageCountCarError = "Bir ürünün en fazla 5 adet resmi olabilir.";
         public static string ImagesAdded = "Ürün fotoğrafı başarılı bir şekilde eklendi.";
+        public static string  AuthorizationDenied="Yetkiniz yok";
+
+        public static string UserRegistered = "Kayıt başarılı";
+        public static string UserNotFound = "Kullanıcı bulunamadı";
+        public static string PasswordError = "Şifre hatalı";
+        public static string SuccessfulLogin = "Giriş başarılı";
+        public static string UserAlreadyExists = "Kullanıcı mevcut";
+        public static string AccessTokenCreated = "Token oluşturuldu";
     }
 }

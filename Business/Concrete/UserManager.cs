@@ -2,12 +2,12 @@
 using Business.Constants;
 using Core.Utulities.Results;
 using DataAccess.Abstract;
-using Entities.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Text;
+
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
+using Core.Entities.Concrete;
 
 namespace Business.Concrete
 {
@@ -49,11 +49,24 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
+        public User GetByMail(string email)
+        {
+            return _userDal.Get(u => u.Email == email);
+        }
+
+        public List<OperationClaim> GetClaims(User user)
+        {
+            return _userDal.GetClaims(user);
+        }
+
         [ValidationAspect(typeof(UserValidation))]
         public IResult Update(User user)
         {
             _userDal.Update(user);
             return new SuccessResult(Messages.UserUpdated);
         }
+
     }
+
+
 }

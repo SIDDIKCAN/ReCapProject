@@ -1,10 +1,10 @@
-﻿using Entities.Concrete;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 
-namespace DataAccess.Concrete.EntityFreamwork
+using Core.Entities.Concrete;
+using Entities.Concrete;
+using Microsoft.EntityFrameworkCore;
+
+namespace DataAccess.Concrete.EntityFramework
 {
     public class ReCapContext : DbContext
     {
@@ -20,5 +20,7 @@ namespace DataAccess.Concrete.EntityFreamwork
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Rental> Rentals { get; set; }
         public DbSet<CarImage> CarImages { get; set; }
+        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+        public DbSet<OperationClaim> OperationClaims { get; set; }
     }
 }
