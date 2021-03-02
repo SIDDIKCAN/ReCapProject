@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using MvcWebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using WebUI.Models;
 
-namespace MvcWebUI.Controllers
+namespace WebUI.Controllers
 {
     public class HomeController : Controller
     {
@@ -18,10 +18,8 @@ namespace MvcWebUI.Controllers
             _logger = logger;
         }
 
-
         public IActionResult Index()
         {
-
             return View();
         }
 

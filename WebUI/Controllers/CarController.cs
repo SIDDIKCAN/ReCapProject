@@ -1,22 +1,18 @@
 ﻿using Business.Abstract;
+using Core.Utulities.Results;
+using Entities.DTOs;
 using Microsoft.AspNetCore.Mvc;
-using MvcWebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Business.Concrete;
-using Core.Utulities.Results;
-using DataAccess.Concrete.EntityFreamwork;
-using Entities.Concrete;
-using Entities.DTOs;
+using WebUI.Models;
 
-namespace MvcWebUI.Controllers
+namespace WebUI.Controllers
 {
     public class CarController : Controller
     {
-        private ICarService _carService;
-
+        ICarService _carService;
         public CarController(ICarService carService)
         {
             _carService = carService;
@@ -25,13 +21,11 @@ namespace MvcWebUI.Controllers
         public IActionResult Index()
         {
             IDataResult<List<CarDetailDto>> carDetailDtos = _carService.GetCarDetails();
-             //IDataResult<List<Car>> cars=_carService.GetAll();
-
-            // CarListViewModel model = new CarListViewModel
+            //var cars= _carService.GetAll();
+            //CarListViewModel model = new CarListViewModel
             //{
-            //    Cars=cars
+            //    Cars = cars
             //};
-
             return View(carDetailDtos.Data);
         }
     }
