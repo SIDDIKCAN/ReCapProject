@@ -21,11 +21,6 @@ namespace WebUI.Controllers
         public IActionResult Index()
         {
             IDataResult<List<CarDetailDto>> carDetailDtos = _carService.GetCarDetails();
-            //var cars= _carService.GetAll();
-            //CarListViewModel model = new CarListViewModel
-            //{
-            //    Cars = cars
-            //};
             return View(carDetailDtos.Data);
         }
     }
